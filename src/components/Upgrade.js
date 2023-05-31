@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import  "../assets/css/style.css";
 const Upgrade = ({
   upgrade,
   setPlanetPC,
@@ -16,7 +16,6 @@ const Upgrade = ({
   const changePerSecond = () => {
     setPerSecond(perSecond + upgrade.persecond);
   };
-  
 
   return (
     <button

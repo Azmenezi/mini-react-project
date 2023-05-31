@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Upgrade from "./Upgrade";
-
+import  "../assets/css/style.css";
 const UpgradesList = ({
   upgrades,
   currency,
@@ -25,7 +25,7 @@ const UpgradesList = ({
       />
     ));
 
-  return <div>{upgradeList}</div>;
+  return <div className="upgradeList">{upgradeList}</div>;
 };
 
 export default UpgradesList;

@@ -2,6 +2,7 @@ import React from "react";
 import Currency from "./Currency";
 import DestroyedPlanets from "./DestroyedPlanets";
 import UpgradesList from "./UpgradesList";
+import  "../assets/css/style.css";
 const ButtonClick = ({
   setCurrency,
   planetPC,
@@ -13,7 +14,7 @@ const ButtonClick = ({
   setPerSecond,
   perSecond,
 }) => {
-  console.log(currency,perSecond,planetPC);
+  console.log(currency, perSecond, planetPC);
   return (
     <div>
       <Currency currency={currency} />
