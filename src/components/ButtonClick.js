@@ -18,6 +18,11 @@ const ButtonClick = ({
     setCurrency(currency + planetPC);
     setDestroyedPlanets(destroyedPlanets + planetPC);
   }
+  function loveYou() {
+    if (destroyedPlanets > 10000000000) {
+      return "I love you <3";
+    }
+  }
   return (
     <div className="ButtonClick-container">
       <div className="ButtonClick-littlecontainer">
@@ -27,6 +32,8 @@ const ButtonClick = ({
               DPC = Destroyed Planets Per Click
               <br />
               DPS = Destroyed Planets Per Second
+              <br />
+              {loveYou()}
             </p>
           </div>
           <div className="currency-2">
