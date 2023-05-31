@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import ButtonClick from "./components/ButtonClick";
+import "./App.css";
+import { useState } from "react";
+import { upgrades } from "./upgrades";
 function App() {
+  const [currency, setCurrency] = useState(0);
+  const [destroyedPlanets, setDestroyedPlanets] = useState(0);
+  const [planetPC, setPlanetPC] = useState(1);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ButtonClick
+        currency={currency}
+        setCurrency={setCurrency}
+        planetPC={planetPC}
+        destroyedPlanets={destroyedPlanets}
+        setDestroyedPlanets={setDestroyedPlanets}
+        upgrades={upgrades}
+        setPlanetPC={setPlanetPC}
+      />
     </div>
   );
 }
