@@ -11,7 +11,7 @@ const UpgradesList = ({
 }) => {
   const upgradeList = upgrades
     .filter((upgrade) => upgrade.price <= currency)
-    .sort((a, b) => a.price + b.price)
+    .sort((a, b) => a.price - b.price)
     .map((upgrade) => (
       <Upgrade
         key={upgrade.id}
