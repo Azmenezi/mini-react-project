@@ -165,4 +165,8 @@
     height: 50%;
     width: 90%;
   }
+  .currency-container {
+    display: flex;
+    margin-bottom: 1%;
+  }
 }
