@@ -10,7 +10,10 @@ const ButtonClick = ({
   setDestroyedPlanets,
   upgrades,
   setPlanetPC,
+  setPerSecond,
+  perSecond,
 }) => {
+  console.log(currency,perSecond,planetPC);
   return (
     <div>
       <Currency currency={currency} />
@@ -29,6 +32,9 @@ const ButtonClick = ({
         setPlanetPC={setPlanetPC}
         setCurrency={setCurrency}
         currency={currency}
+        perSecond={perSecond}
+        setPerSecond={setPerSecond}
+        planetPC={planetPC}
       />
     </div>
   );
