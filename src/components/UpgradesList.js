@@ -1,6 +1,5 @@
-import React, { useState } from "react";
 import Upgrade from "./Upgrade";
-import  "../assets/css/style.css";
+import "../assets/css/style.css";
 const UpgradesList = ({
   upgrades,
   currency,
@@ -10,11 +9,12 @@ const UpgradesList = ({
   setPerSecond,
   planetPC,
 }) => {
-  const [list, setList] = useState(upgrades);
-  const upgradeList = list
+  const upgradeList = upgrades
     .filter((upgrade) => upgrade.price <= currency)
+    .sort((a, b) => a.price + b.price)
     .map((upgrade) => (
       <Upgrade
+        key={upgrade.id}
         upgrade={upgrade}
         setPlanetPC={setPlanetPC}
         setCurrency={setCurrency}
@@ -24,7 +24,6 @@ const UpgradesList = ({
         planetPC={planetPC}
       />
     ));
-
   return <div className="upgradeList">{upgradeList}</div>;
 };
 

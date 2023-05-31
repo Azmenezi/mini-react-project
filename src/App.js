@@ -1,7 +1,7 @@
 import ButtonClick from "./components/ButtonClick";
 import "./assets/css/style.css";
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { upgrades } from "./upgrades";
 
 function App() {
@@ -10,22 +10,24 @@ function App() {
   const [planetPC, setPlanetPC] = useState(1);
   const [perSecond, setPerSecond] = useState(0);
 
-  const addPerSecond = () => {
-    if (perSecond > 0) {
-      setCurrency((prevCurrency) => prevCurrency + perSecond);
-    }
-  };
+  
+const addPerSecond = useCallback(() => {
+  if (perSecond > 0) {
+    setCurrency((prevCurrency) => prevCurrency + perSecond);
+    setDestroyedPlanets((prevDestroyed) => prevDestroyed + perSecond);
+  }
+}, [perSecond, setCurrency, setDestroyedPlanets]);
 
-  useEffect(() => {
-    let timer = setInterval(() => {
-      addPerSecond();
-    }, 1000);
+useEffect(() => {
+  let timer = setInterval(() => {
+    addPerSecond();
+  }, 1000);
 
-    return () => clearInterval(timer);
-  }, [perSecond]);
+  return () => clearInterval(timer);
+}, [addPerSecond]);
 
   return (
-    <div>
+    <div className="mainCont">
       <ButtonClick
         currency={currency}
         setCurrency={setCurrency}

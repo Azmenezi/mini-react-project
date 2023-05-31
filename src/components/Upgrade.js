@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import  "../assets/css/style.css";
+import "../assets/css/style.css";
 const Upgrade = ({
   upgrade,
   setPlanetPC,
@@ -16,17 +15,42 @@ const Upgrade = ({
   const changePerSecond = () => {
     setPerSecond(perSecond + upgrade.persecond);
   };
+  const decider = () => {
+    if (upgrade.DPC > 0) {
+      return (
+        <>
+          {upgrade.name}
+          <br />
+          DPC + {upgrade.DPC}
+          <br />
+          price: {upgrade.price}$
+        </>
+      );
+    } else {
+      return (
+        <>
+          {upgrade.name}
+          <br />
+          DPS + {upgrade.persecond}
+          <br />
+          price: {upgrade.price}$
+        </>
+      );
+    }
+  };
 
   return (
-    <button
-      className="upgradeButton"
-      onClick={() => {
-        changeDPC();
-        changePerSecond();
-      }}
-    >
-      {upgrade.name}
-    </button>
+    
+      <button
+        className="upgradeButton"
+        onClick={() => {
+          changeDPC();
+          changePerSecond();
+        }}
+      >
+        {decider()}
+      </button>
+   
   );
 };
 
