@@ -8,7 +8,7 @@
 
 .ButtonClick-container {
   /* background-color: yellow; */
-  margin-top: -150px;
+  margin-top: -250px;
   height: 50%;
   width: 90%;
 }
@@ -18,7 +18,7 @@
 
 .currency-container {
   display: flex;
-  margin-bottom: 20%;
+  margin-bottom: 40%;
 }
 
 .currency-1 {
