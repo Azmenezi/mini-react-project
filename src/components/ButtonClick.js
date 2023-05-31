@@ -14,6 +14,10 @@ const ButtonClick = ({
   setPerSecond,
   perSecond,
 }) => {
+  function handleKeyPress() {
+    setCurrency(currency + planetPC);
+    setDestroyedPlanets(destroyedPlanets + planetPC);
+  }
   return (
     <div className="ButtonClick-container">
       <div className="ButtonClick-littlecontainer">
@@ -34,6 +38,7 @@ const ButtonClick = ({
             <DestroyedPlanets destroyedPlanets={destroyedPlanets} />
             <button
               className="mainButton"
+              onKeyPress={(e) => handleKeyPress(e)}
               onClick={() => {
                 setCurrency(currency + planetPC);
                 setDestroyedPlanets(destroyedPlanets + planetPC);
