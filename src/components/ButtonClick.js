@@ -24,6 +24,10 @@ const ButtonClick = ({
       return "I love you <3";
     }
   }
+  let mySound = new Audio(click);
+  mySound.oncanplaythrough = function () {
+    // The audio is now loaded
+  };
   return (
     <div className="ButtonClick-container">
       <div className="ButtonClick-littlecontainer">
@@ -48,7 +52,6 @@ const ButtonClick = ({
               className="mainButton"
               onKeyPress={(e) => handleKeyPress(e)}
               onClick={() => {
-                let mySound = new Audio(click);
                 mySound.play();
                 setCurrency(currency + planetPC);
                 setDestroyedPlanets(destroyedPlanets + planetPC);
