@@ -1,4 +1,5 @@
 import "../assets/css/style.css";
+import upgradeSound from "../assets/media/upgrade.wav";
 const Upgrade = ({
   upgrade,
   setPlanetPC,
@@ -40,17 +41,17 @@ const Upgrade = ({
   };
 
   return (
-    
-      <button
-        className="upgradeButton"
-        onClick={() => {
-          changeDPC();
-          changePerSecond();
-        }}
-      >
-        {decider()}
-      </button>
-   
+    <button
+      className="upgradeButton"
+      onClick={() => {
+        let mySound = new Audio(upgradeSound);
+        mySound.play();
+        changeDPC();
+        changePerSecond();
+      }}
+    >
+      {decider()}
+    </button>
   );
 };
 
