@@ -3,7 +3,6 @@ import "./assets/css/style.css";
 import "./App.css";
 import { useCallback, useEffect, useState } from "react";
 import { upgrades } from "./upgrades";
-import horay from "./assets/media/horay.wav";
 function App() {
   const [currency, setCurrency] = useState(0);
   const [destroyedPlanets, setDestroyedPlanets] = useState(0);
@@ -28,7 +27,7 @@ function App() {
   useEffect(() => {
     if (destroyedPlanets > 1000000000 && used === false) {
       setUsed((used) => (used = true));
-      let mySound = new Audio(horay);
+      let mySound = new Audio("./media/horay.wav");
       mySound.play();
     }
   }, [destroyedPlanets, used]);

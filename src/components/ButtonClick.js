@@ -3,7 +3,7 @@ import Currency from "./Currency";
 import DestroyedPlanets from "./DestroyedPlanets";
 import UpgradesList from "./UpgradesList";
 import "../assets/css/style.css";
-import click from "../assets/media/main-click.mp3";
+
 const ButtonClick = ({
   setCurrency,
   planetPC,
@@ -24,7 +24,7 @@ const ButtonClick = ({
       return "I love you <3";
     }
   }
-  let mySound = new Audio(click);
+  let mySound = new Audio("./media/main-click.mp3");
   mySound.oncanplaythrough = function () {
     // The audio is now loaded
   };
